@@ -1,0 +1,42 @@
+{
+  "name": "local-ollama-autocomplete",
+  "displayName": "Local Ollama Autocomplete",
+  "description": "Model picker for local Ollama autocomplete (github.copilot.localAutocomplete). Completely isolated from Copilot Chat, Agent, and remote completions.",
+  "version": "0.1.0",
+  "publisher": "local",
+  "license": "MIT",
+  "engines": { "vscode": "^1.138.0" },
+  "categories": ["Other"],
+  "activationEvents": ["onCommand:localOllamaAutocomplete.selectModel"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "localOllamaAutocomplete.selectModel",
+        "title": "Select Local Autocomplete Model",
+        "category": "Local Ollama"
+      }
+    ],
+    "configuration": {
+      "title": "Local Ollama Autocomplete",
+      "properties": {
+        "github.copilot.localAutocomplete.model": {
+          "type": "string",
+          "default": "qwen2.5-coder:1.5b",
+          "enum": ["qwen2.5-coder:1.5b", "qwen2.5-coder:3b-base", "qwen2.5-coder:7b-base"],
+          "enumDescriptions": [
+            "Qwen2.5 Coder 1.5B (exact Ollama id)",
+            "Qwen2.5 Coder 3B Base (exact Ollama id)",
+            "Qwen2.5 Coder 7B Base (exact Ollama id)"
+          ],
+          "description": "Exact Ollama model id used by the local autocomplete branch. Only these three exact ids are selectable."
+        },
+        "github.copilot.localAutocomplete.endpoint": {
+          "type": "string",
+          "default": "http://127.0.0.1:11435",
+          "description": "Ollama endpoint for local autocomplete."
+        }
+      }
+    }
+  }
+}

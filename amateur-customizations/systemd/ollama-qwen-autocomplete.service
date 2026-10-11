@@ -1,0 +1,13 @@
+[Unit]
+Description=Keep Qwen2.5-Coder autocomplete loaded in system RAM
+After=default.target
+
+[Service]
+Type=simple
+ExecStart=/home/amateur/.local/bin/pin-qca.sh watchdog
+ExecStop=/home/amateur/.local/bin/pin-qca.sh unpin
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

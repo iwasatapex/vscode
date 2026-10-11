@@ -1,0 +1,14 @@
+{
+  // Sanitized template — copy values you need into
+  // ~/.config/Code - OSS/User/settings.json manually.
+  // NEVER commit your real settings.json (tokens, DB creds, paths).
+  "extensions.verifySignature": false,
+  "telemetry.telemetryLevel": "off",
+  "python.defaultInterpreterPath": "/path/to/conda/envs/MATRIX/bin/python",
+  "github.copilot.localAutocomplete.enabled": true,
+  "github.copilot.localAutocomplete.endpoint": "http://127.0.0.1:11435",
+  "github.copilot.localAutocomplete.model": "qwen2.5-coder:3b-base",
+  "github.copilot.localAutocomplete.numPredict": 128,
+  "github.copilot.localAutocomplete.keepAlive": "600",
+  "editor.inlineSuggest.enabled": true
+}
